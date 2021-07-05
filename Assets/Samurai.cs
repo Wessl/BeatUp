@@ -13,22 +13,18 @@ public class Samurai : MonoBehaviour
     
     public void StrikeLeft()
     {
-        // Activate animation that plays
-        animator.Play("samurai_left");
+        animator.Play("samurai_left", -1, 0.0f);
     }
     public void StrikeRight()
     {
-        // Activate animation that plays
-        animator.Play("samurai_right");
+        animator.Play("samurai_right", -1, 0.0f);
     }
     public void StrikeUp()
     {
-        // Activate animation that plays
-        animator.Play("samurai_up");
+        animator.Play("samurai_up", -1, 0.0f);
     }
     public void StrikeDown()
     {
-        // Activate animation that plays
-        animator.Play("samurai_down");
+        animator.Play("samurai_down", -1, 0.0f);
     }
 }

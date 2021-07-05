@@ -22,8 +22,9 @@ public class SongSelectionInput : MonoBehaviour
     public ReadAllSongs songsRead;
     public GameObject songPanelParent;
     public GameObject canvas;
-    
-    
+    public GameObject currentSelection;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class SongSelectionInput : MonoBehaviour
         isBrowsingSongs = false;
         songs = songsRead.SongGUIObjects;
         songIndex = 0;
+        currentSelection = GameObject.FindWithTag("SongsPanel");
         Debug.Log(songs.Count);
     }
 
@@ -90,6 +92,7 @@ public class SongSelectionInput : MonoBehaviour
                 {
                     columnIndex++;
                     selectionOutline.transform.position = columnOptions[columnIndex].transform.position;
+                    currentSelection = columnOptions[columnIndex];
                 }
             }
 
@@ -100,20 +103,29 @@ public class SongSelectionInput : MonoBehaviour
                 {
                     columnIndex--;
                     selectionOutline.transform.position = columnOptions[columnIndex].transform.position;
+                    currentSelection = columnOptions[columnIndex];
                 }
             }
 
-            if (navigateRight.Any(Input.GetKeyDown))
+            if (navigateRight.Any(Input.GetKeyDown) )
             {
-                isBrowsingSongs = true;
-                var selectionOutlineTransform = selectionOutline.GetComponent<RectTransform>();
-                Debug.Log(songs[0]);
-                var songTransform = songs[songIndex].GetComponent<RectTransform>();
-                selectionOutline.transform.SetParent(songPanelParent.transform);
-                selectionOutlineTransform.anchorMin = songTransform.anchorMin;
-                selectionOutlineTransform.anchorMax = songTransform.anchorMax;
-                selectionOutlineTransform.anchoredPosition = songTransform.anchoredPosition;
-                selectionOutlineTransform.sizeDelta = songTransform.sizeDelta;
+                if (currentSelection.CompareTag("SongsPanel"))
+                {
+                    isBrowsingSongs = true;
+                    var selectionOutlineTransform = selectionOutline.GetComponent<RectTransform>();
+                    Debug.Log(songs[0]);
+                    var songTransform = songs[songIndex].GetComponent<RectTransform>();
+                    selectionOutline.transform.SetParent(songPanelParent.transform);
+                    selectionOutlineTransform.anchorMin = songTransform.anchorMin;
+                    selectionOutlineTransform.anchorMax = songTransform.anchorMax;
+                    selectionOutlineTransform.anchoredPosition = songTransform.anchoredPosition;
+                    selectionOutlineTransform.sizeDelta = songTransform.sizeDelta;
+                }
+                else if (currentSelection.CompareTag("SettingsPanel"))
+                {
+                    isBrowsingSongs = false;
+                }
+                
             }
         }
         

@@ -12,6 +12,8 @@ TagManager:
   - ReadSongFile
   - NoteDeletionPoint
   - Samurai
+  - SongsPanel
+  - SettingsPanel
   layers:
   - Default
   - TransparentFX
