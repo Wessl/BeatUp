@@ -21,10 +21,7 @@ public class ReadAllSongs : MonoBehaviour
     private float offset;
 
     private string[] notes;
-    private StringBuilder note_sb = new StringBuilder();
     public bool hasFinishedReading;
-    public Conductor _conductor;
-    public string[] musicFileExtensionTypes;
     public string songFilePath;
     public GameObject songPanelParent;
     public GameObject songPanelPrefab;

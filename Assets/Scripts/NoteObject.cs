@@ -48,6 +48,9 @@ public class NoteObject : MonoBehaviour
         // Calculate how far from the optimal position the note was
         var dist = Mathf.Abs((transform.position - activatorPosition).magnitude);
         GameObject.FindWithTag("HitEffectDisplayer").GetComponent<HitEffectDisplayer>().Hit(dist);
+        // Communicate with GameManager
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().HitNote(dist);
+        // Actually, refactor so that the note hit information is stored on gameManager, retrieved by hiteffectdisplayer, and then also use that info to gather how much % each hit is worth
     }
 
     void Move()

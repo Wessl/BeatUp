@@ -14,6 +14,7 @@ TagManager:
   - Samurai
   - SongsPanel
   - SettingsPanel
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -11,24 +11,29 @@ public class HitEffectDisplayer : MonoBehaviour
     public Sprite hit;
     public Sprite miss;
 
-    public float perfectThreshhold;
-    public float goodThreshhold;
-    public float hitThreshhold;
+    public GameManager gm;
+
+    private float perfectThreshold;
+    private float goodThreshold;
+    private float hitThreshold;
 
     private void Start()
     {
         _sr = GetComponent<SpriteRenderer>();
+        perfectThreshold = gm.perfectThreshold;
+        goodThreshold = gm.goodThreshold;
+        hitThreshold = gm.hitThreshold;
     }
 
     public void Hit(float dist)
     {
-        if (dist <= perfectThreshhold)
+        if (dist <= perfectThreshold)
         {
             _sr.sprite = perfect;
-        } else if (dist <= goodThreshhold)
+        } else if (dist <= goodThreshold)
         {
             _sr.sprite = good;
-        } else if (dist <= hitThreshhold)
+        } else if (dist <= hitThreshold)
         {
             _sr.sprite = hit;
         }
