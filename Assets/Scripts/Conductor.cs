@@ -80,6 +80,7 @@ public class Conductor : MonoBehaviour
 
     void Update()
     {
+        if (!song.isPlaying) return;
         crotchet = 60.0f / bpm;
         songPosition = song.timeSamples / 44100.0f - offset;
         //songPosition = (float)AudioSettings.dspTime * song.pitch;
@@ -116,6 +117,19 @@ public class Conductor : MonoBehaviour
         foreach (var objBar in arrBar)
         {
             objBar.SendMessage("OnBar");
+        }
+    }
+
+    // Call this from other objects to turn on or off music
+    public void SwitchMusicPause()
+    {
+        if (song.isPlaying)
+        {
+            song.Pause();
+        }
+        else
+        {
+            song.Play();
         }
     }
 }
