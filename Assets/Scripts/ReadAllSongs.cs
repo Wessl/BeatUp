@@ -57,8 +57,8 @@ public class ReadAllSongs : MonoBehaviour
             var songGUIPicker = Instantiate(songPanelPrefab, pos, Quaternion.identity);
             songGUIPicker.transform.SetParent(songPanelParent.transform);
             var rectTransform = songGUIPicker.GetComponent<RectTransform>();
-            rectTransform.sizeDelta = new Vector2 (150, -50);
-            rectTransform.anchoredPosition = new Vector2(-20, index*60);
+            rectTransform.sizeDelta = new Vector2 (360, -20);
+            rectTransform.anchoredPosition = new Vector2(100, index*100);
             songGUIPicker.GetComponentInChildren<TextMeshProUGUI>().text = fileName;
             index++;
             

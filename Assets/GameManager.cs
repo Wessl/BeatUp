@@ -27,8 +27,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         percentageHit = (float) notesHit / totalNotes;
-        percentHitText.text = percentageHit * 100 + "%";
-        Debug.Log(percentageHit + "%");
+        // Sets the percentHit text to a percentage-formatted string of the most recent percentage of hit notes
+        percentHitText.text = percentageHit.ToString("p");
     }
 
     void SongActive()
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void HitNote(float hitDist)
     {
+        Debug.Log(hitDist);
         if (hitDist <= perfectThreshold)
         {
             notesHit += 1;

@@ -80,6 +80,7 @@ public class Conductor : MonoBehaviour
 
     void Update()
     {
+        if (!_readSongFile.hasFinishedReading) return;
         if (!song.isPlaying) return;
         crotchet = 60.0f / bpm;
         songPosition = song.timeSamples / 44100.0f - offset;

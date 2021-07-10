@@ -60,7 +60,7 @@ public class SongSelectionInput : MonoBehaviour
                 if (songIndex > 0)
                 {
                     songIndex--;
-                    songPanelParent.transform.position += new Vector3(0, 60, 0);
+                    songPanelParent.transform.position += new Vector3(0, 100, 0);
                     selectionOutline.transform.position = songs[songIndex].transform.position;
                 }
             }
@@ -70,7 +70,7 @@ public class SongSelectionInput : MonoBehaviour
                 if (songIndex < songs.Count - 1)
                 {
                     songIndex++;
-                    songPanelParent.transform.position += new Vector3(0, -60, 0);
+                    songPanelParent.transform.position += new Vector3(0, -100, 0);
                     selectionOutline.transform.position = songs[songIndex].transform.position;
                 }
             }
