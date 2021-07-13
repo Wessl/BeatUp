@@ -1115,7 +1115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890748566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 4.25, z: 0}
+  m_LocalPosition: {x: 8, y: 4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2318,6 +2318,7 @@ GameObject:
   - component: {fileID: 1547915354}
   - component: {fileID: 1547915353}
   - component: {fileID: 1547915355}
+  - component: {fileID: 1547915356}
   m_Layer: 0
   m_Name: HitEffectDisplayer
   m_TagString: HitEffectDisplayer
@@ -2342,6 +2343,7 @@ MonoBehaviour:
   hit: {fileID: 21300002, guid: 9d063b79be80b2b4886e4c74b45f8a29, type: 3}
   miss: {fileID: 21300006, guid: 9d063b79be80b2b4886e4c74b45f8a29, type: 3}
   gm: {fileID: 1098265304}
+  animator: {fileID: 1547915356}
 --- !u!4 &1547915354
 Transform:
   m_ObjectHideFlags: 0
@@ -2401,12 +2403,31 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.125, y: 0.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1547915356
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547915352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04f0af0471ebdde4bb2902e40ece3ee8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1559151855
 GameObject:
   m_ObjectHideFlags: 0
